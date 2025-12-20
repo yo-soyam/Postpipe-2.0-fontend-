@@ -24,8 +24,8 @@ export function HeroParticles() {
     <div className="relative flex h-[70vh] min-h-[500px] w-full flex-col items-center justify-center overflow-hidden">
         <div className="z-10 flex flex-col items-center text-center gap-6 px-4">
             <MagneticText text="PostPipe" hoverText="Pro!" className="font-body text-8xl md:text-9xl lg:text-[10rem] font-black" />
-            <div className="flex text-lg text-muted-foreground max-w-3xl items-center">
-              The largest Next.js backend component
+            <div className="flex text-lg text-muted-foreground max-w-3xl items-center justify-center">
+              <span>The largest Next.js backend component</span>
               <WordRotate
                 words={["library", "Scaffold", "CLIs", "loader", "boilerplate"]}
                 className="text-lg text-foreground dark:text-white ml-2"
