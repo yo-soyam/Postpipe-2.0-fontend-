@@ -86,3 +86,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .btn-31:before {
+    --progress: 100%;
+    background: #fff;
+    -webkit-clip-path: polygon(
+      100% 0,
+      var(--progress) var(--progress),
+      0 100%,
+      100% 100%
+    );
+    clip-path: polygon(
+      100% 0,
+      var(--progress) var(--progress),
+      0 100%,
+      100% 100%
+    );
+    content: "";
+    inset: 0;
+    position: absolute;
+    transition: clip-path 0.2s ease, -webkit-clip-path 0.2s ease;
+  }
+
+  .btn-31:hover:before {
+    --progress: 0%;
+  }
+}

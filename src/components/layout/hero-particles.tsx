@@ -6,8 +6,7 @@ import Link from "next/link"
 
 import { Particles } from "@/components/ui/particles"
 import { Button } from "../ui/button"
-import { DotFlow } from "@/components/ui/dot-flow"
-import { dotFlowItems } from "@/lib/dot-flow-data"
+import { AnimatedButton } from "../ui/animated-button"
 
 export function HeroParticles() {
   const { theme, systemTheme } = useTheme()
@@ -30,8 +29,8 @@ export function HeroParticles() {
               all-in-one platform for modern developers and creators.
             </p>
             <div className="flex gap-4 items-center">
-              <DotFlow items={dotFlowItems} />
-              <Button asChild variant="outline" className="h-auto bg-black border-zinc-800 text-white hover:bg-white hover:text-black px-3 py-2 text-sm">
+              <AnimatedButton>Get Started</AnimatedButton>
+              <Button asChild variant="outline" className="h-auto bg-black border-zinc-800 text-white hover:bg-white hover:text-black px-8 py-4 text-sm uppercase font-black">
                 <Link href="#features">Learn More</Link>
               </Button>
             </div>

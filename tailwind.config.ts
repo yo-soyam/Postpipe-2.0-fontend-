@@ -88,10 +88,25 @@ export default {
             height: '0',
           },
         },
+        'move-up-alternate': {
+          '0%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(80%)',
+          },
+          '51%': {
+            transform: 'translateY(-80%)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'move-up-alternate': 'move-up-alternate 0.3s ease forwards',
       },
     },
   },
