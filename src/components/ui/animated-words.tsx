@@ -13,25 +13,35 @@ export function AnimatedWords({ text, className }: AnimatedWordsProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end center"],
+    offset: ["start 0.9", "start 0.25"],
   });
 
   const letters = text.split("");
 
   return (
-    <motion.div
-      ref={ref}
-      className={cn("inline-block", className)}
-      aria-label={text}
-    >
+    <div ref={ref} className={cn("inline-block", className)} aria-label={text}>
       {letters.map((letter, index) => {
-        const y = useTransform(
-          scrollYProgress,
-          [0, 1],
-          letter === 'P' ? [0, -30] : [0, 0]
-        );
-        const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+        // Apply animation only to "Pipe"
+        if (index < 4) {
+          // Fade-in for "Post"
+          const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+          return (
+            <motion.span
+              key={index}
+              className="inline-block"
+              style={{ opacity }}
+            >
+              {letter}
+            </motion.span>
+          );
+        }
 
+        // Staggered rise-up for "Pipe"
+        const start = 0.1 * (index - 4);
+        const end = 0.5 + 0.1 * (index - 4);
+        const y = useTransform(scrollYProgress, [start, end], [30, 0]);
+        const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+        
         return (
           <motion.span
             key={index}
@@ -42,6 +52,6 @@ export function AnimatedWords({ text, className }: AnimatedWordsProps) {
           </motion.span>
         );
       })}
-    </motion.div>
+    </div>
   );
 }
