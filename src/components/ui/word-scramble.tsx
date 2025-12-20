@@ -16,11 +16,9 @@ export function WordScramble({ text, className }: WordScrambleProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
   const [displayText, setDisplayText] = useState(text);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const scramble = useCallback(() => {
     let pos = 0;
-    setIsAnimating(true);
 
     const interval = setInterval(() => {
       const scrambled = text
@@ -40,7 +38,6 @@ export function WordScramble({ text, className }: WordScrambleProps) {
       if (pos >= text.length * 2) {
         clearInterval(interval);
         setDisplayText(text);
-        setIsAnimating(false);
       }
     }, 100);
 
@@ -48,10 +45,10 @@ export function WordScramble({ text, className }: WordScrambleProps) {
   }, [text]);
 
   useEffect(() => {
-    if (isInView && !isAnimating) {
+    if (isInView) {
       scramble();
     }
-  }, [isInView, isAnimating, scramble]);
+  }, [isInView, scramble]);
 
   return (
     <motion.div
