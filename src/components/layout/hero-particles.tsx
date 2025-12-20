@@ -7,8 +7,9 @@ import Link from "next/link"
 import { Particles } from "@/components/ui/particles"
 import { Button } from "../ui/button"
 import { AnimatedButton } from "../ui/animated-button"
-// import { DotFlow } from "../ui/dot-flow"
 import { dotFlowItems } from "@/lib/dot-flow-data"
+import { MagneticText } from "../ui/morphing-cursor"
+import { RotatingWords } from "../ui/rotating-words"
 
 export function HeroParticles() {
   const { theme, systemTheme } = useTheme()
@@ -23,14 +24,9 @@ export function HeroParticles() {
   return (
     <div className="relative flex h-[70vh] min-h-[500px] w-full flex-col items-center justify-center overflow-hidden">
         <div className="z-10 flex flex-col items-center text-center gap-6 px-4">
-             <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
-              Build & Automate with PostPipe Pro
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              From static forms to agentic AI-powered workflows, PostPipe Pro is the
-              all-in-one platform for modern developers and creators.
-            </p>
-            <div className="flex gap-4 items-center">
+            <MagneticText text="POSTPIPE" hoverText="PRO" className="font-headline text-7xl md:text-8xl lg:text-9xl" />
+            <RotatingWords words={["Component library", "Scaffold", "CLIs", "loader", "boilerplate"]} />
+            <div className="flex gap-4 items-center mt-4">
               <AnimatedButton>Get Started</AnimatedButton>
               <Button asChild variant="outline" className="h-auto bg-black border-zinc-800 text-white hover:bg-white hover:text-black px-8 py-[18.5px] text-sm uppercase font-black">
                 <Link href="#features">Learn More</Link>
