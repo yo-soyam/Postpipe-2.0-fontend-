@@ -31,7 +31,7 @@ export function HeroParticles() {
             </p>
             <div className="flex gap-4 items-center">
               <DotFlow items={dotFlowItems} />
-              <Button asChild size="sm" variant="outline" className="bg-black border-zinc-800 text-white hover:bg-white hover:text-black">
+              <Button asChild variant="outline" className="h-auto bg-black border-zinc-800 text-white hover:bg-white hover:text-black px-3 py-2 text-sm">
                 <Link href="#features">Learn More</Link>
               </Button>
             </div>
