@@ -10,9 +10,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AppHeader } from '@/components/layout/app-header';
 import { AppFooter } from '@/components/layout/app-footer';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Header2 } from '@/components/ui/header-2';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-image');
 
@@ -47,7 +47,7 @@ const features = [
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <AppHeader />
+      <Header2 />
       <main className="flex-1">
         <section
           id="hero"
