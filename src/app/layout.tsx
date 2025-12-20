@@ -4,6 +4,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/components/auth-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { SmoothScroller } from '@/components/layout/smooth-scroller';
+import { Header2 } from '@/components/ui/header-2';
+import { AppFooter } from '@/components/layout/app-footer';
 
 export const metadata: Metadata = {
   title: 'PostPipe Pro',
@@ -32,8 +34,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
+            <Header2 />
             <SmoothScroller>
-              {children}
+              <main className="flex-1">{children}</main>
+              <AppFooter />
             </SmoothScroller>
             <Toaster />
           </AuthProvider>
