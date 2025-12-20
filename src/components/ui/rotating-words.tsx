@@ -29,7 +29,7 @@ export function RotatingWords({ words, className }: RotatingWordsProps) {
   return (
     <div className={cn("text-center", className)}>
         <p className="text-lg text-muted-foreground max-w-3xl">
-            The largest Next.js backend <span className={cn("transition-opacity duration-500", fade ? "opacity-100" : "opacity-0")}>{words[index]}</span>
+            The largest Next.js backend component <span className={cn("transition-opacity duration-500", fade ? "opacity-100" : "opacity-0")}>{words[index]}</span>
         </p>
     </div>
   );

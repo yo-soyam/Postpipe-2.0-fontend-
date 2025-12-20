@@ -10,7 +10,7 @@ interface MagneticTextProps {
   className?: string
 }
 
-export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", className }: MagneticTextProps) {
+export function MagneticText({ text = "CREATIVE", hoverText = "PRO", className }: MagneticTextProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const circleRef = useRef<HTMLDivElement>(null)
   const innerTextRef = useRef<HTMLDivElement>(null)
@@ -97,8 +97,8 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
         ref={circleRef}
         className="absolute top-0 left-0 pointer-events-none rounded-full bg-foreground overflow-hidden"
         style={{
-          width: isHovered ? 150 : 0,
-          height: isHovered ? 150 : 0,
+          width: isHovered ? 250 : 0,
+          height: isHovered ? 250 : 0,
           transition: "width 0.5s cubic-bezier(0.33, 1, 0.68, 1), height 0.5s cubic-bezier(0.33, 1, 0.68, 1)",
           willChange: "transform, width, height",
         }}

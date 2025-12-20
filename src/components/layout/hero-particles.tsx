@@ -24,7 +24,7 @@ export function HeroParticles() {
   return (
     <div className="relative flex h-[70vh] min-h-[500px] w-full flex-col items-center justify-center overflow-hidden">
         <div className="z-10 flex flex-col items-center text-center gap-6 px-4">
-            <MagneticText text="POSTPIPE" hoverText="PRO" className="font-body text-8xl md:text-9xl lg:text-[10rem] font-black" />
+            <MagneticText text="PostPipe" hoverText="2.0" className="font-body text-8xl md:text-9xl lg:text-[10rem] font-black" />
             <RotatingWords words={["Component library", "Scaffold", "CLIs", "loader", "boilerplate"]} />
             <div className="flex gap-4 items-center mt-4">
               <AnimatedButton>Get Started</AnimatedButton>
