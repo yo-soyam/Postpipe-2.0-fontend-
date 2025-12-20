@@ -35,7 +35,7 @@ export function WordRotate({
   }, [words, duration]);
 
   return (
-    <div className="overflow-hidden" style={{ perspective: '100px' }}>
+    <div className="overflow-hidden inline-block align-middle" style={{ perspective: '100px', width: '150px' }}>
       <AnimatePresence mode="wait">
         <motion.span
           key={words[index]}
