@@ -88,9 +88,12 @@
 }
 
 @layer utilities {
+  .btn-31 {
+    @apply relative overflow-hidden;
+  }
   .btn-31:before {
     --progress: 100%;
-    background: #fff;
+    background: hsl(var(--foreground));
     -webkit-clip-path: polygon(
       100% 0,
       var(--progress) var(--progress),
@@ -106,12 +109,17 @@
     content: "";
     inset: 0;
     position: absolute;
-    transition: clip-path 0.2s ease, -webkit-clip-path 0.2s ease;
+    transition: clip-path 0.3s ease, -webkit-clip-path 0.3s ease;
   }
 
   .btn-31:hover:before {
     --progress: 0%;
   }
+
+  .btn-31 .text-wrapper {
+    @apply block relative mix-blend-difference;
+  }
+
 
   .animated-underline {
     @apply relative;
@@ -128,32 +136,5 @@
   }
   .animated-underline:hover::after {
     width: 100%;
-  }
-
-  .btn-pay {
-    @apply h-[56px] px-8 flex items-center justify-center bg-zinc-950 border border-zinc-800 text-white font-black uppercase tracking-wider gap-2 cursor-pointer shadow-lg relative overflow-hidden transition-all duration-300;
-  }
-
-  .btn-pay .svgIcon {
-    @apply w-4;
-  }
-
-  .btn-pay .svgIcon path {
-    @apply fill-white;
-  }
-
-  .btn-pay::before {
-    @apply w-[140px] h-[140px] absolute content-[''] bg-white rounded-full left-[-110%] top-0 transition-all duration-300;
-    mix-blend-mode: difference;
-  }
-
-  .btn-pay:hover::before {
-    @apply transition-all duration-300 rounded-none;
-    transform: translate(100%,-50%);
-  }
-
-  .btn-pay:active {
-    transform: translate(5px,5px);
-    @apply transition-all duration-300;
   }
 }

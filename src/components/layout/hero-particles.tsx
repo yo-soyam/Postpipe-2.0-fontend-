@@ -34,9 +34,8 @@ export function HeroParticles() {
             <div className="flex gap-4 items-center mt-4">
               <AnimatedButton>Get Started</AnimatedButton>
               <Link href="#features">
-                <button className="btn-pay">
-                  Learn More
-                  <CreditCard className="svgIcon"/>
+                <button className="btn-31 h-[56px] px-8 flex items-center justify-center bg-zinc-950 border border-zinc-800 text-white font-black uppercase tracking-wider gap-2 cursor-pointer shadow-lg relative overflow-hidden transition-all duration-300">
+                    <span className="text-wrapper">Learn More</span>
                 </button>
               </Link>
             </div>
