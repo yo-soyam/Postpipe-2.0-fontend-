@@ -129,4 +129,31 @@
   .animated-underline:hover::after {
     width: 100%;
   }
+
+  .btn-pay {
+    @apply w-[140px] h-10 flex items-center justify-center bg-zinc-950 border border-zinc-800 text-white font-semibold gap-2 cursor-pointer shadow-lg relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-pay .svgIcon {
+    @apply w-4;
+  }
+
+  .btn-pay .svgIcon path {
+    @apply fill-white;
+  }
+
+  .btn-pay::before {
+    @apply w-[140px] h-[140px] absolute content-[''] bg-white rounded-full left-[-100%] top-0 transition-all duration-300;
+    mix-blend-mode: difference;
+  }
+
+  .btn-pay:hover::before {
+    @apply transition-all duration-300 rounded-none;
+    transform: translate(100%,-50%);
+  }
+
+  .btn-pay:active {
+    transform: translate(5px,5px);
+    @apply transition-all duration-300;
+  }
 }

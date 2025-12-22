@@ -5,10 +5,10 @@ import { useTheme } from "next-themes"
 import Link from "next/link"
 
 import { Particles } from "@/components/ui/particles"
-import { Button } from "../ui/button"
 import { AnimatedButton } from "../ui/animated-button"
 import { MagneticText } from "../ui/morphing-cursor"
 import { WordRotate } from "../ui/word-rotate"
+import { CreditCard } from "lucide-react"
 
 export function HeroParticles() {
   const { theme, systemTheme } = useTheme()
@@ -33,9 +33,12 @@ export function HeroParticles() {
             </div>
             <div className="flex gap-4 items-center mt-4">
               <AnimatedButton>Get Started</AnimatedButton>
-              <Button asChild variant="outline" className="h-auto bg-black border-zinc-800 text-white hover:bg-foreground hover:text-background px-8 py-[18.5px] text-sm uppercase font-black">
-                <Link href="#features">Learn More</Link>
-              </Button>
+              <Link href="#features">
+                <button className="btn-pay">
+                  Learn More
+                  <CreditCard className="svgIcon"/>
+                </button>
+              </Link>
             </div>
         </div>
       <Particles
